@@ -1,0 +1,200 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>PetShop - Produtos para Gatos</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <style>
+            
+          /* Estilo para o card do produto */
+            .product-card {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            max-width: 300px; /* Ajuste conforme necessário */
+            margin: 0 auto; /* Centraliza o card na página, se necessário */
+            }
+
+            /* Estilo para a imagem dentro do card */
+            .product-card img {
+            width: 100%; /* Ajusta a largura da imagem para preencher o card */
+            height: 300px; /* Ajusta a altura conforme necessário */
+            object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+            }
+
+            /* Estilo para o corpo do card */
+            .product-card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza o conteúdo horizontalmente */
+            justify-content: center; /* Centraliza o conteúdo verticalmente */
+            text-align: center; /* Centraliza o texto */
+            padding: 20px;
+            }
+
+            /* Estilo para o título do produto */
+            .product-card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+            }
+
+            /* Estilo para o preço do produto */
+            .product-card-price {
+            color: #28a745;
+            font-size: 16px;
+            margin-top: 10px; /* Adiciona um espaço acima do preço */
+            }
+
+        </style>
+      </head>
+      <body>
+        <!-- Cabeçalho -->
+    <header>
+        <nav
+          class="navbar navbar-expand-lg navbar-light"
+          style="
+            background-color: #946eff;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <div class="container-fluid">
+            <a
+              class="navbar-brand"
+              href="index.html"
+              style="font-size: 24px; font-weight: bold; color: #fff"
+            >
+              PetShop
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="produtos.html" style="color: #fff"
+                    >Produtos</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="servicos.html" style="color: #fff"
+                    >Serviços</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html" style="color: #fff"
+                    >Login/Cadastro</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+        <!-- Produtos para Gatos -->
+        <section id="produtos-gatos" class="container my-4">
+          <h2 class="text-center">Produtos para Gatos</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="product-card">
+                <img src="imagens/racaopremiumgatos.jpeg" alt="Ração para Gato" />
+                <div class="product-card-body">
+                  <h5 class="product-card-title">Ração Premium para Gatos</h5>
+                  <p class="product-card-price">R$75,00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-card">
+                <img
+                  src="imagens/brinquedointerativogatos.jpeg"
+                  alt="Brinquedo para Gato"
+                />
+                <div class="product-card-body">
+                  <h5 class="product-card-title">Brinquedo Interativo</h5>
+                  <p class="product-card-price">R$50,00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-card">
+                <img
+                  src="imagens/arranhadorgatos.jpg"
+                  alt="Arranhador para Gato"
+                />
+                <div class="product-card-body">
+                  <h5 class="product-card-title">Arranhador para Gatos</h5>
+                  <p class="product-card-price">R$120,00</p>
+                </div>
+              </div>
+            </div>
+            <!-- Adicione mais produtos conforme necessário -->
+          </div>
+        </section>
+
+    <!-- Rodapé -->
+    <footer
+      class="text-center mt-4 py-4"
+      style="background-color: #946eff; color: #fff"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Sobre Nós</h5>
+            <p>
+              Somos uma petshop generica feita para um trabalho da PUC Online!
+              Espero que gostem!
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Contato</h5>
+            <p><strong>Email:</strong> contato@petshop.com</p>
+            <p><strong>Telefone:</strong> (51) 1234-5678</p>
+            <p>
+              <strong>Endereço:</strong> Rua dos Animais, 123 - Porto Alegre, RS
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Links Úteis</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" style="color: #fff">Página Inicial</a>
+              </li>
+              <li><a href="produtos.html" style="color: #fff">Produtos</a></li>
+              <li><a href="servicos.html" style="color: #fff">Serviços</a></li>
+              <li>
+                <a href="login.html" style="color: #fff">Login/Cadastro</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-3">
+            <p class="mb-0">
+              &copy; 2024 PetShop - Todos os direitos reservados. Desenvolvido
+              por Leonardo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+      </body>
+    </html>
+  </body>
+</html>

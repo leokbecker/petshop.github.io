@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PetShop - Login/Cadastro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="
+          background-color: #946eff;
+          color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <div class="container-fluid">
+          <a
+            class="navbar-brand"
+            href="index.html"
+            style="font-size: 24px; font-weight: bold; color: #fff"
+          >
+            PetShop
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html" style="color: #fff"
+                  >Produtos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicos.html" style="color: #fff"
+                  >Serviços</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" style="color: #fff"
+                  >Login/Cadastro</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Formulário de Login -->
+    <section id="login" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h2 class="text-center mb-4">Login</h2>
+            <form id="login-form">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="senha" class="form-label">Senha:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="senha"
+                  name="senha"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary w-100"
+                style="
+                  background-color: #6037d4;
+                  color: #fff;
+                  border-color: #6037d4;
+                "
+              >
+                Entrar
+              </button>
+            </form>
+            <div class="text-center mt-4">
+              <h3>
+                Não tem uma conta?
+                <a href="cadastro.html" style="color: #946eff">Cadastrar-se</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer
+      class="text-center mt-4 py-4"
+      style="background-color: #946eff; color: #fff"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Sobre Nós</h5>
+            <p>
+              Somos uma petshop generica feita para um trabalho da PUC Online!
+              Espero que gostem!
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Contato</h5>
+            <p><strong>Email:</strong> contato@petshop.com</p>
+            <p><strong>Telefone:</strong> (51) 1234-5678</p>
+            <p>
+              <strong>Endereço:</strong> Rua dos Animais, 123 - Porto Alegre, RS
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Links Úteis</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" style="color: #fff">Página Inicial</a>
+              </li>
+              <li><a href="produtos.html" style="color: #fff">Produtos</a></li>
+              <li><a href="servicos.html" style="color: #fff">Serviços</a></li>
+              <li>
+                <a href="login.html" style="color: #fff">Login/Cadastro</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-3">
+            <p class="mb-0">
+              &copy; 2024 PetShop - Todos os direitos reservados. Desenvolvido
+              por Leonardo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

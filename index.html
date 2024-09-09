@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetShop - Página Inicial</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px; /* Ajuste o tamanho fixo dos carrosséis conforme necessário */
+        margin: 0 auto; /* Centraliza os carrosséis */
+      }
+      .carousel-inner {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        height: 400px; /* Tamanho fixo dos carrosséis */
+      }
+
+      .carousel-item {
+        position: relative;
+        width: 100%; /* Garante que o carrossel ocupe a largura do contêiner */
+        height: 400px; /* Ajuste a altura conforme necessário */
+        overflow: hidden; /* Garante que a imagem não saia dos limites do carrossel */
+      }
+      .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Faz a imagem cobrir o contêiner, mantendo a proporção */
+        object-position: center; /* Centraliza a imagem no contêiner */
+      }
+      .carousel-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        text-align: center;
+        width: 90%; /* Ajusta a largura da legenda para não ultrapassar o carrossel */
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+      }
+      .carousel-caption h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .carousel-caption p {
+        font-size: 16px;
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 5%;
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon::after {
+        font-size: 24px;
+      }
+      @media (max-width: 768px) {
+        .carousel-caption h3 {
+          font-size: 18px;
+        }
+        .carousel-caption p {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="
+          background-color: #946eff;
+          color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <div class="container-fluid">
+          <a
+            class="navbar-brand"
+            href="index.html"
+            style="font-size: 24px; font-weight: bold; color: #fff"
+          >
+            PetShop
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html" style="color: #fff"
+                  >Produtos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicos.html" style="color: #fff"
+                  >Serviços</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" style="color: #fff"
+                  >Login/Cadastro</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Carousels -->
+    <section class="carousel-section" style="padding-top: 100px">
+      <div class="container">
+        <div class="row">
+          <!-- Caroseuls lado a lado -->
+          <!-- Caroseuls Serviços -->
+          <div class="col-lg-6 mb-4">
+            <h2 class="text-center">Serviços</h2>
+            <div
+              id="carouselServicos"
+              class="carousel slide carousel-container"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="servicos.html">
+                    <img
+                      src="imagens/servicos1.jpg"
+                      class="d-block w-100"
+                      alt="Serviço 1"
+                    />
+                  </a>
+                  <div class="carousel-caption">
+                    <h3>Banhos e Tosa</h3>
+                    <p>Temos os melhores preços e cuidado com os seus pets!</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <a href="servicos.html">
+                    <img
+                      src="imagens/servicos2.jpg"
+                      class="d-block w-100"
+                      alt="Serviço 2"
+                    />
+                  </a>
+                  <div class="carousel-caption">
+                    <h3>Agendamentos</h3>
+                    <p>
+                      Agende conosco a consulta para o seu pet e fique
+                      tranquilo!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselServicos"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselServicos"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Caroseuls Produtos -->
+          <div class="col-lg-6 mb-4">
+            <h2 class="text-center">Produtos</h2>
+            <div
+              id="carouselProdutos"
+              class="carousel slide carousel-container"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="produtos-cachorros.html">
+                    <img
+                      src="imagens/cachorro.jpg"
+                      class="d-block w-100"
+                      alt="Produto 1"
+                    />
+                  </a>
+                  <div class="carousel-caption">
+                    <h3>Caninos</h3>
+                    <p>Muita variedade de produtos para seu amigo canino!</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <a href="produtos-gatos.html">
+                    <img
+                      src="imagens/gato.jpg"
+                      class="d-block w-100"
+                      alt="Produto 2"
+                    />
+                  </a>
+                  <div class="carousel-caption">
+                    <h3>Felinos</h3>
+                    <p>Muita variedade de produtos para seu amigo felino!</p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselProdutos"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselProdutos"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Carrossel Promoções -->
+          <div class="col-12 mb-4">
+            <h2 class="text-center">Promoções</h2>
+            <div
+              id="carouselPromocoes"
+              class="carousel slide carousel-container"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="produtos.html">
+                    <img
+                      src="imagens/produtos1.jpg"
+                      class="d-block w-100"
+                      alt="Promoção 1"
+                    />
+                  </a>
+                  <div class="carousel-caption">
+                    <h3>Desconto em Brinquedos</h3>
+                    <p>Descontos especiais em brinquedos selecionados!</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <a href="produtos.html">
+                    <img
+                      src="imagens/racoes.jpeg"
+                      class="d-block w-100"
+                      alt="Promoção 2"
+                    />
+                  </a>
+                  <div class="carousel-caption">
+                    <h3>Ofertas em Rações</h3>
+                    <p>
+                      Aproveite nossas ofertas imperdíveis em rações para seu
+                      pet!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselPromocoes"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselPromocoes"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer
+      class="text-center mt-4 py-4"
+      style="background-color: #946eff; color: #fff"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Sobre Nós</h5>
+            <p>
+              Somos uma petshop generica feita para um trabalho da PUC Online!
+              Espero que gostem!
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Contato</h5>
+            <p><strong>Email:</strong> contato@petshop.com</p>
+            <p><strong>Telefone:</strong> (51) 1234-5678</p>
+            <p>
+              <strong>Endereço:</strong> Rua dos Animais, 123 - Porto Alegre, RS
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Links Úteis</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" style="color: #fff">Página Inicial</a>
+              </li>
+              <li><a href="produtos.html" style="color: #fff">Produtos</a></li>
+              <li><a href="servicos.html" style="color: #fff">Serviços</a></li>
+              <li>
+                <a href="login.html" style="color: #fff">Login/Cadastro</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-3">
+            <p class="mb-0">
+              &copy; 2024 PetShop - Todos os direitos reservados. Desenvolvido
+              por Leonardo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

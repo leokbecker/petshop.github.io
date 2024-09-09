@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PetShop - Cadastro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      /* Estilos personalizados */
+      header {
+        background-color: #f8f9fa;
+      }
+      .logo h1 {
+        margin: 0;
+      }
+      .nav-links {
+        list-style: none;
+        padding: 0;
+      }
+      .nav-links li {
+        display: inline;
+        margin-right: 15px;
+      }
+      footer {
+        background-color: #f8f9fa;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      .form-check-label {
+        font-size: 1.1rem;
+      }
+      .form-control {
+        margin-bottom: 0.5rem;
+      }
+      .btn-primary {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="
+          background-color: #946eff;
+          color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <div class="container-fluid">
+          <a
+            class="navbar-brand"
+            href="index.html"
+            style="font-size: 24px; font-weight: bold; color: #fff"
+          >
+            PetShop
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html" style="color: #fff"
+                  >Produtos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicos.html" style="color: #fff"
+                  >Serviços</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" style="color: #fff"
+                  >Login/Cadastro</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Formulário de Cadastro -->
+    <section id="cadastro" class="container mt-4">
+      <h2 class="mb-4">Cadastro de Cliente e Pet</h2>
+      <form id="cadastro-form">
+        <!-- Dados do Cliente -->
+        <div class="form-group">
+          <h3>Dados do Cliente</h3>
+          <label for="nome-cliente">Nome:</label>
+          <input
+            type="text"
+            id="nome-cliente"
+            name="nome-cliente"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="endereco">Endereço:</label>
+          <input
+            type="text"
+            id="endereco"
+            name="endereco"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input
+            type="text"
+            id="telefone"
+            name="telefone"
+            class="form-control"
+            required
+            pattern="\d{2}-\d{5}-\d{4}"
+            placeholder="XX-XXXXX-XXXX"
+            oninput="formatarTelefone(this)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Dados do Pet -->
+        <div class="form-group">
+          <h3>Dados do Pet</h3>
+          <label for="nome-pet">Nome do Pet:</label>
+          <input
+            type="text"
+            id="nome-pet"
+            name="nome-pet"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="tipo-pet">Tipo de Pet:</label>
+          <select id="tipo-pet" name="tipo-pet" class="form-control" required>
+            <option value="">Selecione o tipo</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="ave">Ave</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="raca">Raça:</label>
+          <input
+            type="text"
+            id="raca"
+            name="raca"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Temperamento do Pet -->
+        <fieldset class="form-group">
+          <legend>Temperamento do Pet:</legend>
+          <div class="form-check">
+            <input
+              type="radio"
+              name="temperamento"
+              value="Calmo"
+              class="form-check-input"
+              id="calmo"
+              required
+            />
+            <label class="form-check-label" for="calmo">Calmo</label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              name="temperamento"
+              value="Alegre"
+              class="form-check-input"
+              id="alegre"
+              required
+            />
+            <label class="form-check-label" for="alegre">Alegre</label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              name="temperamento"
+              value="Agressivo"
+              class="form-check-input"
+              id="agressivo"
+              required
+            />
+            <label class="form-check-label" for="agressivo">Agressivo</label>
+          </div>
+        </fieldset>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="background-color: #6037d4; color: #fff; border-color: #6037d4"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer
+      class="text-center mt-4 py-4"
+      style="background-color: #946eff; color: #fff"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Sobre Nós</h5>
+            <p>
+              Somos uma petshop generica feita para um trabalho da PUC Online!
+              Espero que gostem!
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Contato</h5>
+            <p><strong>Email:</strong> contato@petshop.com</p>
+            <p><strong>Telefone:</strong> (51) 1234-5678</p>
+            <p>
+              <strong>Endereço:</strong> Rua dos Animais, 123 - Porto Alegre, RS
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Links Úteis</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" style="color: #fff">Página Inicial</a>
+              </li>
+              <li><a href="produtos.html" style="color: #fff">Produtos</a></li>
+              <li><a href="servicos.html" style="color: #fff">Serviços</a></li>
+              <li>
+                <a href="login.html" style="color: #fff">Login/Cadastro</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-3">
+            <p class="mb-0">
+              &copy; 2024 PetShop - Todos os direitos reservados. Desenvolvido
+              por Leonardo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      // Função para formatar o telefone
+      function formatarTelefone(input) {
+        let valor = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+        if (valor.length > 11) {
+          valor = valor.slice(0, 11);
+        }
+        if (valor.length > 6) {
+          valor = valor.replace(/(\d{2})(\d{5})(\d{0,4})/, "$1-$2-$3");
+        } else if (valor.length > 2) {
+          valor = valor.replace(/(\d{2})(\d{0,5})/, "$1-$2");
+        }
+        input.value = valor;
+      }
+    </script>
+  </body>
+</html>

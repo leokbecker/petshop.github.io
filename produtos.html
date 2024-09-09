@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PetShop - Produtos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      /* Estilo para as categorias de produtos */
+      #categorias {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .icon-button {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 10px;
+        position: relative;
+      }
+
+      .icon-button img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .icon-button .subtitle {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 14px;
+        border-radius: 0 0 50% 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .icon-button:hover .subtitle {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px);
+      }
+
+      .icon-button:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s ease;
+      }
+
+      /* Estilo para o carrossel */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .carousel-inner {
+        position: relative;
+        overflow: hidden;
+        height: 400px;
+      }
+      .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .carousel-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        text-align: center;
+        width: 90%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 5%;
+      }
+
+      /* Estilizando a lista de produtos */
+      #produtos .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+      #produtos .product-list li {
+        list-style-type: none;
+        padding: 20px;
+        margin: 10px;
+        width: 250px;
+        text-align: center;
+        background-color: #f8f9fa;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      #produtos .product-list li:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .carousel-inner {
+          height: 300px;
+        }
+        .carousel-caption h3 {
+          font-size: 18px;
+        }
+        .carousel-caption p {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="
+          background-color: #946eff;
+          color: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <div class="container-fluid">
+          <a
+            class="navbar-brand"
+            href="index.html"
+            style="font-size: 24px; font-weight: bold; color: #fff"
+          >
+            PetShop
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html" style="color: #fff"
+                  >Produtos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicos.html" style="color: #fff"
+                  >Serviços</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" style="color: #fff"
+                  >Login/Cadastro</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Produtos em Destaque -->
+    <section id="produtos-destaque" class="carousel-section">
+      <h2 class="text-center mt-4">Produtos em Destaque</h2>
+      <div
+        id="carouselProdutosDestaque"
+        class="carousel slide carousel-container"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="imagens/produtos1.jpg"
+              class="d-block w-100"
+              alt="Produto 1"
+            />
+            <div class="carousel-caption">
+              <h3>Brinquedos e Acessórios</h3>
+              <p>
+                Explore uma grande variedade de brinquedos e acessórios para seu
+                pet!
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="imagens/produtos2.jpeg"
+              class="d-block w-100"
+              alt="Produto 2"
+            />
+            <div class="carousel-caption">
+              <h3>Itens de Transporte e Passeio</h3>
+              <p>
+                Encontre as melhores ofertas para itens de transporte e passeio
+                para seu pet!
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselProdutosDestaque"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselProdutosDestaque"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Categorias de Produtos -->
+    <section id="categorias" class="py-5">
+      <h2 class="text-center">Categorias de Produtos</h2>
+      <div class="d-flex flex-wrap justify-content-center">
+        <a href="produtos-cachorros.html" class="icon-button">
+          <img src="imagens/cachorro.jpg" alt="Cachorros" />
+          <div class="subtitle">Cachorros</div>
+        </a>
+        <a href="produtos-gatos.html" class="icon-button">
+          <img src="imagens/gato.jpg" alt="Gatos" />
+          <div class="subtitle">Gatos</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Promoções -->
+    <section id="produtos" class="py-5">
+      <h2 class="text-center">Promoções</h2>
+      <ul class="product-list">
+        <li>
+          <img src="imagens/racoes.jpeg" alt="Promoção 1" class="img-fluid" />
+          <h3>Desconto em Rações</h3>
+          <p>Aproveite 10% de desconto em todas as rações!</p>
+        </li>
+        <li>
+          <img
+            src="imagens/banhoetosa.jpg"
+            alt="Promoção 2"
+            class="img-fluid"
+          />
+          <h3>Pacote Completo de Higiene</h3>
+          <p>
+            Pacote de banho e tosa com 20% de desconto, exclusivo esta semana!
+          </p>
+        </li>
+        <li>
+          <img src="imagens/kit.jpg" alt="Promoção 3" class="img-fluid" />
+          <h3>Kit Brinquedos</h3>
+          <p>Compre 3 brinquedos e ganhe um grátis!</p>
+        </li>
+      </ul>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
